@@ -1,4 +1,4 @@
-import { createContext } from 'react';
+import { createContext, useContext } from 'react';
 import { fetchAnimals } from '../services/FetchAnimals';
 
 const AnimalContext = createContext();
@@ -12,7 +12,7 @@ const AnimalProvider = ({ children }) => {
 };
 
 const useAnimalContext = () => {
-  const context = useContext(UserContext);
+  const context = useContext(AnimalContext);
   if (context === undefined) {
     throw new Error('useUserContext must be used within a provider');
   }
@@ -21,3 +21,5 @@ const useAnimalContext = () => {
 
 export { AnimalProvider, useAnimalContext };
 //from fetch... name, image, breed, bio, age
+
+

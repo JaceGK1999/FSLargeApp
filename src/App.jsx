@@ -5,7 +5,8 @@ import { BrowserRouter } from 'react-router-dom';
 import { useUserContext } from './context/UserContext';
 import Auth from './views/Auth';
 import Links from './views/Header';
-import ProtectedPage from './views/ProtectedPage';
+// import ProtectedPage from './views/ProtectedPage';
+import AnimalsList from './views/AnimalsList';
 
 export default function App() {
   const { currentUser } = useUserContext();
@@ -15,7 +16,7 @@ export default function App() {
         <Links currentUser={currentUser} />
         <Switch>
           <Route exact path={'/'}>
-            {currentUser ? <ProtectedPage /> : <Redirect to="/login" />}
+            {currentUser ? <AnimalsList /> : <Redirect to="/login" />}
           </Route>
 
           <Route exact path={'/login'}>

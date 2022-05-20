@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
 import { useUserContext } from '../context/UserContext';
 import { signInUser, signupUser } from '../services/User';

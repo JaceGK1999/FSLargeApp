@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function AuthHooks() {
+export default function authHooks() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
