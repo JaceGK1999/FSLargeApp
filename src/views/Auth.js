@@ -70,39 +70,4 @@ export default function Auth() {
       </form>
     </div>
   );
-
-  // <div className="auth">
-  //   <span
-  //     className={`${type === 'signin' ? 'active' : ''}, signin`}
-  //     onClick={() => setType('signin')}
-  //   >
-  //     [Sign In]
-  //   </span>
-  //   <span
-  //     className={type === 'signup' ? 'active' : ''}
-  //     onClick={() => setType('signup')}
-  //   >
-  //     [Sign Up]
-  //   </span>
-  //   <form className="auth-form" onSubmit={handleSubmit}>
-  //     <label>
-  //       email:
-  //       <input
-  //         type="email"
-  //         value={email}
-  //         onChange={(e) => setEmail(e.target.value)}
-  //       />
-  //     </label>
-  //     <label>
-  //       password:
-  //       <input
-  //         type="password"
-  //         value={password}
-  //         onChange={(e) => setPassword(e.target.value)}
-  //       />
-  //     </label>
-
-  //     <input type="submit" />
-  //   </form>
-  // </div>
 }

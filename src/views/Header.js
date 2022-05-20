@@ -13,7 +13,11 @@ export default function Links() {
   return (
     <div>
       <div>
-        <button onClick={handleLogout}>Logout</button>
+        {currentUser && (
+          <div>
+            <button onClick={handleLogout}>Logout</button>
+          </div>
+        )}
       </div>
       <ul>
         {currentUser && (
