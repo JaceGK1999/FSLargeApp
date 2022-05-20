@@ -1,5 +1,5 @@
 import { createContext, useContext, useState } from 'react';
-import { getUser } from '../services/user';
+import { getUser } from '../services/User';
 
 const UserContext = createContext();
 const UserProvider = ({ children }) => {

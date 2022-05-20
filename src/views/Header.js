@@ -1,9 +1,20 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { useUserContext } from '../context/UserContext';
+import { logout } from '../services/User';
 
-export default function Links({ currentUser }) {
+const handleLogout = async () => {
+  await logout();
+  window.location.reload();
+};
+
+export default function Links() {
+  const { currentUser } = useUserContext();
   return (
     <div>
+      <div>
+        <button onClick={handleLogout}>Logout</button>
+      </div>
       <ul>
         {currentUser && (
           <li>

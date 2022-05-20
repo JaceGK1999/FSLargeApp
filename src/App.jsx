@@ -14,7 +14,7 @@ export default function App() {
       <BrowserRouter>
         <Links currentUser={currentUser} />
         <Switch>
-          <Route exact path={'/protected'}>
+          <Route exact path={'/'}>
             {currentUser ? <ProtectedPage /> : <Redirect to="/login" />}
           </Route>
 

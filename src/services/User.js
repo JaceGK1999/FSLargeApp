@@ -5,13 +5,13 @@ export function getUser() {
 }
 
 export async function signupUser(email, password) {
-  const { user } = await client.auth.signUp({ email, password });
+  const { user } = await client.auth.signUp(email, password);
 
   return user;
 }
 
 export async function signInUser(email, password) {
-  const { user } = await client.auth.signIn({ email, password });
+  const { user } = await client.auth.signIn(email, password);
   return user;
 }
 

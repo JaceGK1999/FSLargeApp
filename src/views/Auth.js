@@ -1,15 +1,21 @@
 import React, { useState } from 'react';
-import { Redirect } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
 import { useUserContext } from '../context/UserContext';
-import { signInUser } from '../services/user';
+import { signInUser, signupUser } from '../services/User';
 import './Auth.css';
+import AuthHooks from '../hooks/AuthHooks';
 
 export default function Auth() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-  const [type, setType] = useState('signin');
+  const {
+    email,
+    setEmail,
+    password,
+    setPassword,
+    error,
+    setError,
+    type,
+    setType,
+  } = AuthHooks();
 
   const { setCurrentUser } = useUserContext();
 
@@ -29,7 +35,7 @@ export default function Auth() {
   const handleSignUp = async (e) => {
     e.preventDefault();
     try {
-      const resp = await signUpUser({ email, password });
+      const resp = await signupUser({ email, password });
       setCurrentUser(resp);
       history.push('/');
     } catch (error) {
