@@ -4,8 +4,6 @@ import { getUser } from '../services/user';
 const UserContext = createContext();
 const UserProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(getUser());
- 
-
 
   return (
     <UserContext.Provider
@@ -21,7 +19,7 @@ const UserProvider = ({ children }) => {
 const useUserContext = () => {
   const context = useContext(UserContext);
   if (context === undefined) {
-    throw new Error('useUser context must be used within a provider');
+    throw new Error('useUserContext must be used within a provider');
   }
   return context;
 };
